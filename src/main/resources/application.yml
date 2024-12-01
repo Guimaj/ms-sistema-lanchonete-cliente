@@ -3,12 +3,12 @@ spring:
     name: mssistemalanchonetecliente
   data:
     mongodb:
-      uri: mongodb+srv://root:v1FgmWFh5YJqvdLE@fiap-postech.bn0pf.mongodb.net/fiap-postech?retryWrites=true&w=majority&appName=fiap-postech
+      uri: ${MONGODB_URL}
 
 server:
   port: 8080
   servlet:
-    context-path: /sistema-lanchonete/api/v1
+    context-path: /sistema-lanchonete-cliente/api/v1
   error:
     include-message: always
     include-binding-errors: always
