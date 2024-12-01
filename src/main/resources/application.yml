@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: mssistemalanchonetecliente
+  data:
+    mongodb:
+      uri: mongodb+srv://root:v1FgmWFh5YJqvdLE@fiap-postech.bn0pf.mongodb.net/fiap-postech?retryWrites=true&w=majority&appName=fiap-postech
+
+server:
+  port: 8080
+  servlet:
+    context-path: /sistema-lanchonete/api/v1
+  error:
+    include-message: always
+    include-binding-errors: always
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+api:
+  security:
+    token:
+      secret: ${TOKEN_SECRET}
+
