@@ -25,7 +25,7 @@ public class TokenService implements TokenPort {
                     .withExpiresAt(LocalDateTime.now().plusHours(1).toInstant(ZoneOffset.of("-03:00")))
                     .sign(algorithm);
         } catch (JWTCreationException exception) {
-            throw new RuntimeException("Erro durante a geração do token", exception);
+            throw new IllegalArgumentException("Erro durante a geração do token", exception);
         }
     }
 }

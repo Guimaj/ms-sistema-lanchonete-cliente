@@ -3,7 +3,6 @@ package com.fiap.mssistemalanchonetecliente.entrypoint.controller;
 import com.fiap.mssistemalanchonetecliente.core.exception.ErrorResponse;
 import com.fiap.mssistemalanchonetecliente.core.model.Login;
 import com.fiap.mssistemalanchonetecliente.core.model.Token;
-import com.fiap.mssistemalanchonetecliente.core.usecase.LoginUseCaseFacade;
 import com.fiap.mssistemalanchonetecliente.core.usecase.login.LoginUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -21,8 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 public class LoginController {
 
+    private final LoginUseCase loginUseCase;
+
     @Autowired
-    LoginUseCase loginUseCase;
+    public LoginController(LoginUseCase loginUseCase) {
+        this.loginUseCase = loginUseCase;
+    }
 
     @Operation(
             description = "Realiza o login do cliente",

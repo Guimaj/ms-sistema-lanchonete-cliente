@@ -3,3 +3,7 @@ spring:
     mongodb:
       database: testdb
       uri: mongodb://localhost:27017/testdb
+api:
+  security:
+    token:
+      secret: 38b25b3f-59d2-4236-8b37-c03a3ea380e8
