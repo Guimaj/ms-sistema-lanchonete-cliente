@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: mssistemalanchonetecliente
+  data:
+    mongodb:
+      uri: ${MONGODB_URL}
+
+server:
+  port: 8080
+  servlet:
+    context-path: /sistema-lanchonete-cliente/api/v1
+  error:
+    include-message: always
+    include-binding-errors: always
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+api:
+  security:
+    token:
+      secret: ${TOKEN_SECRET}
+
