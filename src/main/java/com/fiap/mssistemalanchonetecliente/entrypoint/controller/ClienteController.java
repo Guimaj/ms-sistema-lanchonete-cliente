@@ -19,8 +19,12 @@ import java.util.List;
 @RequestMapping("/clientes")
 public class ClienteController {
 
+    private final ClienteUseCase clienteUseCase;
+
     @Autowired
-    ClienteUseCase clienteUseCase;
+    public ClienteController(ClienteUseCase clienteUseCase) {
+        this.clienteUseCase = clienteUseCase;
+    }
 
     @Operation(
       description = "Retorna todos os clientes",
