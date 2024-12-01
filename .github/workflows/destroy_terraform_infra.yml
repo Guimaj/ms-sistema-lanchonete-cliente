@@ -1,0 +1,47 @@
+name: Destroy terraform Infra
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Destroy resources?'
+        type: choice
+        options:
+          - yes_sure
+          - God_forbid
+
+jobs:
+  destroy:
+    name: Destroy
+    if: ${{ github.event.inputs.action == 'yes_sure' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Destroy alb controller
+        run: |
+          cd albController
+          terraform fmt -recursive
+          terraform init
+          terraform destroy -var='aws_region=${{ vars.AWS_REGION }}' --auto-approve
+
+      - name: Destroy infra and cluster eks
+        run: |
+          cd eks
+          terraform fmt -recursive
+          terraform init
+          terraform destroy -var='aws_region=${{ vars.AWS_REGION }}' --auto-approve
+
+      - name: Destroy IRSA iam role
+        run: |
+          aws iam delete-role-policy --role-name IRSA-EKSLoadBalancerControllerRole --policy-name AWSLoadBalancerControllerIAMPolicy
+          aws iam delete-role --role-name IRSA-EKSLoadBalancerControllerRole
