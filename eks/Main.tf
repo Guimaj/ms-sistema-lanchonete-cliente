@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "ms-lanchonete-cliente"
-    key    = "deployment-service/terraform.tfstate"
+    key    = "infra-eks/terraform.tfstate"
     region = "us-east-2"
   }
 }
@@ -11,8 +11,6 @@ module "mslanchonetecliente" {
 
   project_name = var.projectname
   region       = var.aws_region
-  appversion   = var.app_version
-  token_secret = var.tokensecret
 }
 
 variable "aws_region" {
@@ -21,18 +19,8 @@ variable "aws_region" {
   description = "AWS region"
 }
 
-variable "app_version" {
-  type        = string
-  description = "version to deploy"
-}
-
 variable "projectname" {
   type        = string
   default     = "mslanchonetecliente"
   description = "Application Name"
-}
-
-variable "tokensecret" {
-  type      = string
-  sensitive = true
 }
