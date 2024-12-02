@@ -31,7 +31,7 @@ jobs:
 
       - name: Validate alb controller
         run: |
-          cd albController
+          cd alb
           terraform fmt -recursive
           terraform init
           terraform validate
@@ -62,7 +62,7 @@ jobs:
 
       - name: Apply alb controller
         run: |
-          cd albController
+          cd alb
           terraform fmt -recursive
           terraform init
           terraform apply -var='aws_region=${{ vars.AWS_REGION }}' --auto-approve
