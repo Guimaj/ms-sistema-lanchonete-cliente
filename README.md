@@ -12,8 +12,6 @@ Microsserviço responsável pela criação e autenticação dos clientes do sist
   Um cliente pode se cadastar utilizando apenas o cpf ou utilizando nome e e-mail.  
   O cadastro de um cliente possui um código que é utilizado para referencia-lo. 
 
-### Desenho de Arquitetura dos Requisitos do Negócio:
-
 ### Componentes Principais:
   - Backend: microsserviço spring boot para o gerenciamento e autenticação dos clientes.
   - Banco de Dados: Armazenamento de dados de clientes.
