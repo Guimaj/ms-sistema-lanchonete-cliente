@@ -1,8 +1,8 @@
 # ms-sistema-lanchonete-cliente
-Microsserviço responsável pela criação e autenticação dos clientes do sistema-lanchonete (FIAP - Pós Tech)
+Microsserviço responsável pela criação e autenticação dos clientes do sistema-lanchonete (FIAP - Pós Tech - Fase 4)
 
 ## Contrato
-  Com aplicação rodando, acesse o endpoint `/sistema-lanchonete-cliente/api/v1/swagger-ui/index.html` e você terá o detalhamento dos endpoints expostos na aplicação.
+  Acesse o endpoint `/sistema-lanchonete-cliente/api/v1/swagger-ui/index.html` e você terá o detalhamento dos endpoints expostos na aplicação.
 
 ## A aplicação
   Conforme escrito anteriormente, podemos gerenciar e autenticar os clientes do sistema-lanchonete
@@ -23,9 +23,6 @@ Microsserviço responsável pela criação e autenticação dos clientes do sist
   - MongoDB: Banco de dados NoSQL para armazenamento dos clientes.
   - Network Load Balancer: Distribuição de tráfego para instâncias EC2.
   - Docker: Containerização dos microsserviços.
-
-### Desenho de Arquitetura da Infraestrutura: 
-![Diagrama - Arquitetura](https://github.com/user-attachments/assets/47b1b124-e7fe-47d2-bbe0-81a7937b3d91)
 
 ### Banco de Dados: 
 Para a aplicação, foi utilizado como banco de dados uma instância do banco não relacional **MongoDB** através do serviço **MongoDB Atlas**. A escolha desse serviço ocorreu principalmente pela praticidade na configuração e gerenciamento do banco de dados por parte do **MongoDB Atlas**. 
