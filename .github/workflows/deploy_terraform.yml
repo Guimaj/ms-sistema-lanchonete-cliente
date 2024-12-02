@@ -10,7 +10,7 @@ jobs:
   publish:
     if: >
       github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.head_branch == 'main'  # Verifica a branch
+      github.event.workflow_run.head_branch == 'main'
     name: Publish image
     runs-on: ubuntu-latest
 
