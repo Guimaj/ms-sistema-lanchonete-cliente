@@ -8,6 +8,7 @@ on:
 
 jobs:
   plan:
+    if: github.event.pull_request.merged == true
     name: Plan
     runs-on: ubuntu-latest
 
