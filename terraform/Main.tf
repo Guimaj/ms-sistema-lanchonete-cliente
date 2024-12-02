@@ -12,7 +12,6 @@ module "mslanchonetecliente" {
   project_name = var.projectname
   region       = var.aws_region
   appversion   = var.app_version
-  token_secret = var.tokensecret
 }
 
 variable "aws_region" {
@@ -30,9 +29,4 @@ variable "projectname" {
   type        = string
   default     = "mslanchonetecliente"
   description = "Application Name"
-}
-
-variable "tokensecret" {
-  type      = string
-  sensitive = true
 }

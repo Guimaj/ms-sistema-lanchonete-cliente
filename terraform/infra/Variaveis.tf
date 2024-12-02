@@ -12,8 +12,3 @@ variable "appversion" {
   type        = string
   description = "version to deploy"
 }
-
-variable "token_secret" {
-  type      = string
-  sensitive = true
-}

@@ -46,12 +46,7 @@ resource "kubernetes_deployment" "deployment" {
 
           env {
             name = "TOKEN_SECRET"
-            value_from {
-              secret_key_ref {
-                name = "${var.project_name}-token-secret"
-                key  = "secret"
-              }
-            }
+            value = "53080375-3f93-4f8c-96ec-d33a440dc6b0"
           }
           # liveness_probe {
           #   http_get {
