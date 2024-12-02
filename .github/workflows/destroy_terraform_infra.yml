@@ -29,7 +29,7 @@ jobs:
 
       - name: Destroy alb controller
         run: |
-          cd albController
+          cd alb
           terraform fmt -recursive
           terraform init
           terraform destroy -var='aws_region=${{ vars.AWS_REGION }}' --auto-approve
