@@ -66,7 +66,7 @@ module "api_gateway" {
     my-vpc = {
       name               = "${var.project_name}-vpc-link"
       security_group_ids = [module.api_gateway_security_group.security_group_id]
-      subnet_ids         = data.aws_subnets.mslanchonete_public_subnets.ids
+      subnet_ids         = data.aws_subnets.mslanchonetecliente_public_subnets.ids
     }
   }
 
