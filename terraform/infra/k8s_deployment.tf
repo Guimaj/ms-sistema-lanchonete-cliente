@@ -4,7 +4,6 @@ data "aws_ecr_repository" "repository" {
 
 
 resource "kubernetes_deployment" "deployment" {
-  depends_on = [kubernetes_secret.token_secret]
   metadata {
     name = "${var.project_name}-deployment"
   }
