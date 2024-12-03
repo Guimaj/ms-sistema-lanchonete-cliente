@@ -28,7 +28,27 @@ module "api_gateway" {
       }
     }
 
-    "ANY /sistema-lanchonete/api/v1/auth/{proxy+}" = {
+    "ANY /sistema-lanchonete-cliente/api/v1/auth/{proxy+}" = {
+      integration = {
+        connection_type = "VPC_LINK"
+        uri             = data.aws_lb_listener.ingress.arn
+        type            = "HTTP_PROXY"
+        method          = "ANY"
+        vpc_link_key    = "my-vpc"
+      }
+    }
+
+    "ANY /sistema-lanchonete-cliente/api/v1/swagger-ui" = {
+      integration = {
+        connection_type = "VPC_LINK"
+        uri             = data.aws_lb_listener.ingress.arn
+        type            = "HTTP_PROXY"
+        method          = "ANY"
+        vpc_link_key    = "my-vpc"
+      }
+    }
+
+    "ANY /sistema-lanchonete-cliente/api/v1/swagger-ui/{proxy+}" = {
       integration = {
         connection_type = "VPC_LINK"
         uri             = data.aws_lb_listener.ingress.arn
