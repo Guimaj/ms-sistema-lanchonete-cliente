@@ -96,7 +96,7 @@ module "api_gateway_security_group" {
 
   name        = "${var.project_name}-apigateway"
   description = "API Gateway group"
-  vpc_id      = data.aws_vpc.mslanchonete_vpc.id
+  vpc_id      = data.aws_vpc.mslanchonetecliente_vpc.id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
   ingress_rules       = ["http-80-tcp"]
