@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "ms-lanchonete-cliente"
+    bucket = "lanchonete-cliente"
     key    = "deployment-service/terraform.tfstate"
     region = "us-east-2"
   }
