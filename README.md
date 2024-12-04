@@ -30,6 +30,6 @@ Para a aplicação, foi utilizado como banco de dados uma instância do banco n�
 
 O usuário pode realizar o login utilizando o endpoint `/sistema-lanchonete-cliente/api/v1/auth` informando seu **CPF** e **senha** utilizados na realização do seu cadastro, caso o usuário tenha cadastro e suas informações estiverem corretas, será retornado um token JWT válido por 1 hora que deverá ser passado nas chamadas dos endpoints da aplicação. O API Gateway será responsável por executar a função lambda que realiza a validação do token JWT enviado nas requisições da aplicação, caso o mesmo seja válido, a requisição poderá ser feita com sucesso, caso contrario a aplicação retornará um erro de autenticação.
 
-### Qualidade:
+### Qualidade - Sonar:
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Guimaj_ms-sistema-lanchonete-cliente&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Guimaj_ms-sistema-lanchonete-cliente)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Guimaj_ms-sistema-lanchonete-cliente&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Guimaj_ms-sistema-lanchonete-cliente)
